@@ -1,5 +1,5 @@
 /* Google Font: Be Vietnam Pro || */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
 
 /* Primary Colors || */
 $bright-red: hsl(12, 88%, 59%);
@@ -13,203 +13,333 @@ $v-light-gray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 
 /* Fonts || */
-$font-vietnam: 'Be Vietnam Pro', sans-serif;
+$font-vietnam: "Be Vietnam Pro", sans-serif;
 
 /* General Styles || */
-*{
-    text-decoration: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: $white;
-    font-family: $font-vietnam;
-    background-image: url("../images/bg-tablet-pattern.svg"), 
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: $white;
+  font-family: $font-vietnam;
+  background-image: url("../images/bg-tablet-pattern.svg"),
     url("../images/bg-tablet-pattern.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 5em -5.8em, 13em 29em;
-    font-size: 16px;
-}  
-
-img{
-    width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 5em -5.8em, 13em 29em;
+  font-size: 16px;
+  overflow-x: hidden;
 }
-p{
-    color: $dark-grayish-blue;
-    line-height: 1.8em;
+img {
+  width: 100%;
+}
+p {
+  color: $dark-grayish-blue;
+  line-height: 1.8em;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $dark-blue;
 }
 
 /* Utilities || */
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn{
-    background: $bright-red;
-    color: $v-light-gray;
-    padding: 1em 1.9em;
-    border: none;
-    border-radius: 2em;
-    box-shadow: 0px 8px 10px lighten($bright-red, 20);
+.btn {
+  background: $bright-red;
+  color: $v-light-gray;
+  font-weight: 700;
+  padding: 1em 1.9em;
+  border: none;
+  border-radius: 2em;
+  box-shadow: 0px 8px 10px lighten($bright-red, 20);
+   cursor: pointer;
+   transition: .4s ease-out;
+   &:hover{
+background-color: $v-pale-red;
+color: $bright-red;
+   }
 }
-.center{
-    text-align: center;
-}
-.w-mx{
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+.center {
+  text-align: center;
 }
 
 /* Nav || */
-.nav-wrapper{
-    width: 80%;
-    max-width: 1130px;
-    margin: 2em auto 0;
+.nav-wrapper {
+  width: 80%;
+  max-width: 1130px;
+  margin: 2em auto 0;
 }
-.nav{
-    position: relative;
-    justify-content: space-between;
-    .nav-links{
-        background-color: $white;
-        position: absolute;
-        flex-direction: column;
-        font-weight: 500;
-        width: 100%;
-        top: 4em;
-        left: 0;
-        right: 0;
-        transform: scale(1);
-        padding: 3em 0;
-        transition: .4s ease-out;
-        overflow: hidden;
-        z-index: 100;
-    }
-    li + li{
-        margin-top: 1.5em;
-    }
-    a{
-        color: lighten($dark-blue, 5);
-        cursor: pointer;
-    }
-}
-.nav-links.active{
-    left: 110%;
-    transform: scale(0);
-}
-.burger{
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border-color: transparent;
-    background-color: transparent;
+.nav {
+  position: relative;
+  justify-content: space-between;
+  .nav-links {
+    background-color: $white;
+    position: absolute;
+    flex-direction: column;
+    font-weight: 500;
+    width: 100%;
+    top: 4em;
+    left: 0;
+    right: 0;
+    transform: scale(1);
+    padding: 3em 0;
+    box-shadow: 0px 200px 150px rgba(0, 0, 0, 0.315);
+    transition: 0.4s ease-out;
+    overflow: hidden;
+    z-index: 100;
+  }
+  li + li {
+    margin-top: 1.5em;
+  }
+  a {
+    color: lighten($dark-blue, 5);
     cursor: pointer;
-    .lines{
-        position: absolute;
-        width: 20px;
-        height: 3px;
-        margin: auto;
-        left: 0;
-        right: 0;
-        background-color: hsl(0, 0%, 0%);
-        transition: .2s ease-in;
-    }
-    .line1{
-        top: 5px;
-        transform: rotate(0);
-    }
-    .line2{
-        transform: rotate(0);
-        opacity: 1;
-    }
-    .line3{
-        top: 20px;
-        transform: rotate(0);
-    }
+  }
 }
-.burger.active .line1{
-    top: 11px;
-    transform: rotate(45deg);
+.nav-links.active {
+  left: 110%;
+  transform: scale(0);
 }
-.burger.active .line2{
-    right: 360px;
-    opacity: 0;
+.burger {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  .lines {
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 0%);
+    transition: 0.2s ease-in;
+  }
+  .line1 {
+    top: 5px;
+    transform: rotate(0);
+  }
+  .line2 {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  .line3 {
+    top: 20px;
+    transform: rotate(0);
+  }
 }
-.burger.active .line3{
-    top: 11px;
-    transform: rotate(-45deg);
+.burger.active .line1 {
+  top: 11px;
+  transform: rotate(45deg);
 }
+.burger.active .line2 {
+  right: 360px;
+  opacity: 0;
+}
+.burger.active .line3 {
+  top: 11px;
+  transform: rotate(-45deg);
+}
+
+// .overlay{
+//     position: absolute;
+//     top: 7.1%;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.062);
+//     display: none;
+// }
+// .overlay.active{
+//     display: block;
+// }
 
 /* Hero || */
-.hero{
-    width: 87%;
-    margin: 3em auto 4em;
-    flex-direction: column-reverse;;
-    h1{
-        font-size: 2.5rem;
-        margin-bottom: .5em;
-    }
-    p{
-        margin-bottom: 1em;
-    }
-//    &::before{
-//     content: "";
-//     width: 80%;
-//     height: 80%;
-//     position: absolute;
+.hero {
+  width: 87%;
+  margin: 3em auto 4em;
+  flex-direction: column-reverse;
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  //    &::before{
+  //     content: "";
+  //     width: 80%;
+  //     height: 80%;
+  //     position: absolute;
 
-//     overflow: visible;
-//     z-index: -1;
-//    }
+  //     overflow: visible;
+  //     z-index: -1;
+  //    }
 }
 
-.different{
-    width: 87%;
-    margin: auto;
-    margin-bottom: 4em;
-    h2{
-        font-size: 2.3rem;
+/* Different || */
+.different {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 4em;
+  p {
+    margin: 0 1em;
+  }
+  h2 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5em;
+  }
+  .different_points {
+    margin-top: 4em;
+  }
+  .points {
+    margin-bottom: 3em;
+    &:nth-child(2) h3::before {
+      content: "02";
     }
-    .different_points{
-        margin-top: 3em;
+    &:nth-child(3) h3::before {
+      content: "03";
     }
-    .points{
-        margin-bottom: 2em;
+  }
+  .points h3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 110%;
+    height: 6.5vh;
+    font-size: 1rem;
+    padding: 0.6em;
+    padding-left: 0em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    background-color: $v-pale-red;
+    border-bottom-left-radius: 3em;
+    border-top-left-radius: 3em;
+    &::before {
+      content: "01";
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: -0.5em;
+      width: 40px;
+      height: 4.5vh;
+      background-color: $bright-red;
+      color: $v-light-gray;
+      padding: 0.5em 0.8em;
+      border-radius: 1.5em;
     }
-    .points h3{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-        width: 110%;
-        height: 4vh;
-        font-size: 1rem;
-        padding: .6em;
-        padding-left: 1em;
-        margin-bottom: .5em;
+  }
+}
+
+/* Testimonials || */
+.testimonials {
+  margin-bottom: 3em;
+  h4 {
+    font-size: 2rem;
+    margin-bottom: 2em;
+  }
+}
+.testimonials_wrapper {
+  display: flex;
+  flex-shrink: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  .testimony {
+    position: relative;
+    width: 90%;
+    // height: 40vh;
+    margin-right: 1.5em;
+    // margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 3em 1em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $v-light-gray;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    transition: 0.5s ease;
+    overflow: visible;
+    z-index: 30;
+  }
+  .testimony_img {
+    position: absolute;
+    top: -1.9em;
+    width: 50px;
+    z-index: 20;
+  }
+  h4 {
+    font-size: 1rem;
+    margin-bottom: 1em;
+  }
+}
+
+.sliders {
+    margin-bottom: 3em;
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 0.4em;
+    padding: 0.2em;
+    background-color: red;
+    color: $white;
+  }
+}
+.cta{
+    height: 50vh;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: $v-light-gray;
+    background-color: $bright-red;
+    flex-direction: column;
+    padding: 0 2em;
+    button{
+        margin-top: 2em;
         background-color: $v-pale-red;
-        border-radius: 3em;
-        &::before{
-            content: "01";
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: 0;
-            left: -.5em;
-            width: 40px;
-            height: 4.5vh;
+        color: $bright-red;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.418);
+        &:hover{
             background-color: $bright-red;
-            color: $v-light-gray;
-            padding:  .5em .8em;
-            border-radius: 1.5em;
+            color: $v-pale-red;
+        }
+    }
+}
+footer{
+    background-color: $v-dark-blue;
+    .socials{
+        img{
+            height: 20px;
+            width: 20px;
         }
     }
 }

@@ -40,6 +40,9 @@
     </nav>
   </header>
 
+  <!-- Overlay
+  <div class="overlay"></div> -->
+
   <!-- HERO || -->
   <div class="hero flex">
     <div class="hero_bring center">
@@ -56,8 +59,8 @@
   </div>
 
   <!-- WHAT'S DIFFERENT || -->
-  <div class="different center">
-    <div class="different_details">
+  <div class="different">
+    <div class="different_details center">
       <h2>What's different about Manage?</h2>
       <p>Manage provides all the functionality your team needs, without
         the complexity. Our software is tailor-made for modern digital
@@ -95,12 +98,12 @@
   </div>
 
   <!-- TESTIMONIALS || -->
-  <div class="testimonials">
+  <div class="testimonials center">
     <h4>What they've said</h4>
 
     <div class="testimonials_wrapper">
       <!-- Anisha -->
-      <div class="testimony anisha">
+      <div class="testimony anisha" id="slide-1">
         <div class="testimony_img">
           <img src="./images/avatar-anisha.png" alt="Image of Anisha">
         </div>
@@ -112,7 +115,7 @@
         </div>
       </div>
       <!-- Ali Bravo -->
-      <div class="testimony ali">
+      <div class="testimony ali" id="slide-2">
         <div class="testimony_img">
           <img src="./images/avatar-ali.png" alt="Image of Ali">
         </div>
@@ -124,7 +127,7 @@
         </div>
       </div>
       <!-- Richard-->
-      <div class="testimony  richard">
+      <div class="testimony richard" id="slide-3">
         <div class="testimony_img">
           <img src="./images/avatar-richard.png" alt="Image of Richard">
         </div>
@@ -136,7 +139,7 @@
         </div>
       </div>
       <!-- Shanai-->
-      <div class="testimony shanai">
+      <div class="testimony shanai" id="slide-4">
         <div class="testimony_img">
           <img src="./images/avatar-shanai.png" alt="">
         </div>
@@ -149,7 +152,12 @@
         </div>
       </div>
     </div>
-
+    <div class="sliders">
+      <a href="#slide-1" id="slide">1</a>
+      <a href="#slide-2" id="slide">2</a>
+      <a href="#slide-3" id="slide">3</a>
+      <a href="#slide-4" id="slide">4</a>
+    </div>
     <button class=" btn cta-btn testimonials_cta">
       Get Started
     </button>
@@ -157,7 +165,7 @@
   </div>
 
   <!-- CTA || -->
-  <div class="cta">
+  <div class="cta flex">
     <div class="cta_details">
       Simplify how your team works today.
     </div>
