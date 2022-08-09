@@ -1,0 +1,215 @@
+/* Google Font: Be Vietnam Pro || */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+/* Primary Colors || */
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+
+/* Neutral Colors || */
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$v-dark-blue: hsl(233, 12%, 13%);
+$v-pale-red: hsl(12, 100%, 96%);
+$v-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+/* Fonts || */
+$font-vietnam: 'Be Vietnam Pro', sans-serif;
+
+/* General Styles || */
+*{
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: $white;
+    font-family: $font-vietnam;
+    background-image: url("../images/bg-tablet-pattern.svg"), 
+    url("../images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 5em -5.8em, 13em 29em;
+    font-size: 16px;
+}  
+
+img{
+    width: 100%;
+}
+p{
+    color: $dark-grayish-blue;
+    line-height: 1.8em;
+}
+
+/* Utilities || */
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    background: $bright-red;
+    color: $v-light-gray;
+    padding: 1em 1.9em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0px 8px 10px lighten($bright-red, 20);
+}
+.center{
+    text-align: center;
+}
+.w-mx{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Nav || */
+.nav-wrapper{
+    width: 80%;
+    max-width: 1130px;
+    margin: 2em auto 0;
+}
+.nav{
+    position: relative;
+    justify-content: space-between;
+    .nav-links{
+        background-color: $white;
+        position: absolute;
+        flex-direction: column;
+        font-weight: 500;
+        width: 100%;
+        top: 4em;
+        left: 0;
+        right: 0;
+        transform: scale(1);
+        padding: 3em 0;
+        transition: .4s ease-out;
+        overflow: hidden;
+        z-index: 100;
+    }
+    li + li{
+        margin-top: 1.5em;
+    }
+    a{
+        color: lighten($dark-blue, 5);
+        cursor: pointer;
+    }
+}
+.nav-links.active{
+    left: 110%;
+    transform: scale(0);
+}
+.burger{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    .lines{
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        background-color: hsl(0, 0%, 0%);
+        transition: .2s ease-in;
+    }
+    .line1{
+        top: 5px;
+        transform: rotate(0);
+    }
+    .line2{
+        transform: rotate(0);
+        opacity: 1;
+    }
+    .line3{
+        top: 20px;
+        transform: rotate(0);
+    }
+}
+.burger.active .line1{
+    top: 11px;
+    transform: rotate(45deg);
+}
+.burger.active .line2{
+    right: 360px;
+    opacity: 0;
+}
+.burger.active .line3{
+    top: 11px;
+    transform: rotate(-45deg);
+}
+
+/* Hero || */
+.hero{
+    width: 87%;
+    margin: 3em auto 4em;
+    flex-direction: column-reverse;;
+    h1{
+        font-size: 2.5rem;
+        margin-bottom: .5em;
+    }
+    p{
+        margin-bottom: 1em;
+    }
+//    &::before{
+//     content: "";
+//     width: 80%;
+//     height: 80%;
+//     position: absolute;
+
+//     overflow: visible;
+//     z-index: -1;
+//    }
+}
+
+.different{
+    width: 87%;
+    margin: auto;
+    margin-bottom: 4em;
+    h2{
+        font-size: 2.3rem;
+    }
+    .different_points{
+        margin-top: 3em;
+    }
+    .points{
+        margin-bottom: 2em;
+    }
+    .points h3{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        width: 110%;
+        height: 4vh;
+        font-size: 1rem;
+        padding: .6em;
+        padding-left: 1em;
+        margin-bottom: .5em;
+        background-color: $v-pale-red;
+        border-radius: 3em;
+        &::before{
+            content: "01";
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: -.5em;
+            width: 40px;
+            height: 4.5vh;
+            background-color: $bright-red;
+            color: $v-light-gray;
+            padding:  .5em .8em;
+            border-radius: 1.5em;
+        }
+    }
+}
