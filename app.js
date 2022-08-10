@@ -7,7 +7,7 @@ const slide = document.querySelector("#slide");
 burger.addEventListener("click", () =>{
     burger.classList.toggle("active");
     menu.classList.toggle("active");
-    // overlay.classList.toggle("active");
+    overlay.classList.toggle("active");
 })
 // slide.addEventListener("click", (e) => {
 //     e.preventDefault();

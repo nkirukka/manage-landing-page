@@ -17,14 +17,22 @@ html {
 }
 
 body {
+  position: relative;
   background-color: hsl(0deg, 0%, 100%);
   font-family: "Be Vietnam Pro", sans-serif;
-  background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 5em -5.8em, 13em 29em;
   font-size: 16px;
   overflow-x: hidden;
+}
+body::before {
+  content: url("../images/bg-tablet-pattern.svg");
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -10em;
+  right: 10em;
+  transform: scale(0.6);
+  opacity: 0.7;
+  z-index: -5;
 }
 
 img {
@@ -62,13 +70,12 @@ h5 {
   padding: 1em 1.9em;
   border: none;
   border-radius: 2em;
-  box-shadow: 0px 8px 10px #f9ad9a;
+  box-shadow: 0px 3px 5px #f9ad9a;
   cursor: pointer;
   transition: 0.4s ease-out;
 }
 .btn:hover {
-  background-color: hsl(12deg, 100%, 96%);
-  color: hsl(12deg, 88%, 59%);
+  background: #f79a82;
 }
 
 .center {
@@ -80,6 +87,9 @@ h5 {
   width: 80%;
   max-width: 1130px;
   margin: 2em auto 0;
+}
+.nav-wrapper .logo {
+  width: 120px;
 }
 
 .nav {
@@ -97,7 +107,6 @@ h5 {
   right: 0;
   transform: scale(1);
   padding: 3em 0;
-  box-shadow: 0px 200px 150px rgba(0, 0, 0, 0.315);
   transition: 0.4s ease-out;
   overflow: hidden;
   z-index: 100;
@@ -107,7 +116,12 @@ h5 {
 }
 .nav a {
   color: #2c3763;
+  font-weight: 700;
+  transition: 0.4s ease-out;
   cursor: pointer;
+}
+.nav a:hover {
+  color: hsl(12deg, 88%, 59%);
 }
 
 .nav-links.active {
@@ -122,6 +136,7 @@ h5 {
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
+  z-index: 20;
 }
 .burger .lines {
   position: absolute;
@@ -161,10 +176,24 @@ h5 {
   transform: rotate(-45deg);
 }
 
+.overlay {
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.062);
+  display: none;
+  transition: 0.4s;
+}
+
+.overlay.active {
+  display: block;
+}
+
 /* Hero || */
 .hero {
   width: 87%;
-  margin: 3em auto 4em;
+  margin: 3em auto 7em;
   flex-direction: column-reverse;
 }
 .hero h1 {
@@ -172,14 +201,26 @@ h5 {
   margin-bottom: 0.5em;
 }
 .hero p {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 /* Different || */
 .different {
+  position: relative;
   width: 100%;
   margin: auto;
   margin-bottom: 4em;
+}
+.different::before {
+  content: url("../images/bg-tablet-pattern.svg");
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -30em;
+  right: -1em;
+  transform: scale(0.5);
+  opacity: 0.7;
+  z-index: -5;
 }
 .different p {
   margin: 0 1em;
@@ -295,30 +336,104 @@ h5 {
 }
 
 .cta {
+  position: relative;
   height: 50vh;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
   color: hsl(0deg, 0%, 98%);
   background-color: hsl(12deg, 88%, 59%);
   flex-direction: column;
-  padding: 0 2em;
+  padding: 0 1em;
 }
 .cta button {
   margin-top: 2em;
   background-color: hsl(12deg, 100%, 96%);
   color: hsl(12deg, 88%, 59%);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.418);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.418);
 }
 .cta button:hover {
-  background-color: hsl(12deg, 88%, 59%);
-  color: hsl(12deg, 100%, 96%);
+  color: #f36744;
+  background-color: #ffdad1;
+}
+.cta::before {
+  position: absolute;
+  content: url("/images/bg-simplify-section-mobile.svg");
+  left: 0;
+  opacity: 0.15;
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: hsl(233deg, 12%, 13%);
+  padding: 0 2em;
+}
+footer a {
+  color: hsl(12deg, 100%, 96%);
+  font-weight: 300;
+  transition: 0.3s ease;
+}
+footer a:hover {
+  color: hsl(12deg, 88%, 59%);
+}
+footer .logo-socials__wrapper {
+  order: 3;
+  flex-direction: column-reverse;
+  margin: 3em 0;
+}
+footer .logo-socials__wrapper .logo {
+  filter: brightness(0) invert(1);
+}
+footer .socials {
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 2em;
 }
 footer .socials img {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
+  transition: 0.3s ease-out;
+}
+footer .socials img:hover {
+  filter: invert(29%) sepia(80%) saturate(4608%) hue-rotate(337deg) brightness(96%) contrast(97%);
+}
+footer .socials a:hover {
+  color: hsl(12deg, 88%, 59%);
+}
+footer .footer_links {
+  order: 2;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+footer .footer_links .home,
+footer .footer_links .careers {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer_links .home a,
+footer .footer_links .careers a {
+  margin-bottom: 1em;
+  transition: 0.3s ease;
+}
+footer .updates {
+  order: -1;
+  width: 100%;
+  margin: 3em auto;
+}
+footer .updates input {
+  width: 70%;
+  outline: none;
+  border-color: transparent;
+  border-radius: 30px;
+  padding: 1em;
+  margin-right: 0.5em;
+}
+footer .updates button {
+  box-shadow: 0 0 0 0 transparent;
+}
+footer .copyright {
+  order: 5;
+  margin-bottom: 1em;
+  font-size: 0.7rem;
 }/*# sourceMappingURL=styles.css.map */

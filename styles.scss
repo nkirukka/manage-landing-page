@@ -27,15 +27,22 @@ html {
   overflow-x: hidden;
 }
 body {
+  position: relative;
   background-color: $white;
   font-family: $font-vietnam;
-  background-image: url("../images/bg-tablet-pattern.svg"),
-    url("../images/bg-tablet-pattern.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 5em -5.8em, 13em 29em;
   font-size: 16px;
   overflow-x: hidden;
+  &::before {
+    content: url("../images/bg-tablet-pattern.svg");
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -10em;
+    right: 10em;
+    transform: scale(0.6);
+    opacity: 0.7;
+    z-index: -5;
+  }
 }
 img {
   width: 100%;
@@ -68,13 +75,12 @@ h5 {
   padding: 1em 1.9em;
   border: none;
   border-radius: 2em;
-  box-shadow: 0px 8px 10px lighten($bright-red, 20);
-   cursor: pointer;
-   transition: .4s ease-out;
-   &:hover{
-background-color: $v-pale-red;
-color: $bright-red;
-   }
+  box-shadow: 0px 3px 5px lighten($bright-red, 20);
+  cursor: pointer;
+  transition: 0.4s ease-out;
+  &:hover {
+    background: lighten($bright-red, 15);
+  }
 }
 .center {
   text-align: center;
@@ -85,6 +91,9 @@ color: $bright-red;
   width: 80%;
   max-width: 1130px;
   margin: 2em auto 0;
+  .logo {
+    width: 120px;
+  }
 }
 .nav {
   position: relative;
@@ -100,7 +109,6 @@ color: $bright-red;
     right: 0;
     transform: scale(1);
     padding: 3em 0;
-    box-shadow: 0px 200px 150px rgba(0, 0, 0, 0.315);
     transition: 0.4s ease-out;
     overflow: hidden;
     z-index: 100;
@@ -110,7 +118,12 @@ color: $bright-red;
   }
   a {
     color: lighten($dark-blue, 5);
+    font-weight: 700;
+    transition: .4s ease-out;
     cursor: pointer;
+    &:hover{
+      color: $bright-red;
+    }
   }
 }
 .nav-links.active {
@@ -124,6 +137,7 @@ color: $bright-red;
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
+  z-index: 20;
   .lines {
     position: absolute;
     width: 20px;
@@ -160,46 +174,50 @@ color: $bright-red;
   transform: rotate(-45deg);
 }
 
-// .overlay{
-//     position: absolute;
-//     top: 7.1%;
-//     width: 100vw;
-//     height: 100vh;
-//     background-color: rgba(0, 0, 0, 0.062);
-//     display: none;
-// }
-// .overlay.active{
-//     display: block;
-// }
+.overlay{
+    position: absolute;
+    top: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.062);
+    display: none;
+    transition: .4s;
+}
+.overlay.active{
+    display: block;
+}
 
 /* Hero || */
 .hero {
   width: 87%;
-  margin: 3em auto 4em;
+  margin: 3em auto 7em;
   flex-direction: column-reverse;
   h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5em;
   }
   p {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
-  //    &::before{
-  //     content: "";
-  //     width: 80%;
-  //     height: 80%;
-  //     position: absolute;
-
-  //     overflow: visible;
-  //     z-index: -1;
-  //    }
 }
 
 /* Different || */
 .different {
+  position: relative;
   width: 100%;
   margin: auto;
   margin-bottom: 4em;
+  &::before {
+    content: url("../images/bg-tablet-pattern.svg");
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -30em;
+    right: -1em;
+    transform: scale(0.5);
+    opacity: 0.7;
+    z-index: -5;
+  }
   p {
     margin: 0 1em;
   }
@@ -300,7 +318,7 @@ color: $bright-red;
 }
 
 .sliders {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
   a {
     display: inline-flex;
     justify-content: center;
@@ -314,32 +332,109 @@ color: $bright-red;
     color: $white;
   }
 }
-.cta{
-    height: 50vh;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    color: $v-light-gray;
-    background-color: $bright-red;
-    flex-direction: column;
-    padding: 0 2em;
-    button{
-        margin-top: 2em;
-        background-color: $v-pale-red;
-        color: $bright-red;
-        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.418);
-        &:hover{
-            background-color: $bright-red;
-            color: $v-pale-red;
-        }
+.cta {
+  position: relative;
+  height: 50vh;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: $v-light-gray;
+  background-color: $bright-red;
+  flex-direction: column;
+  padding: 0 1em;
+  button {
+    margin-top: 2em;
+    background-color: $v-pale-red;
+    color: $bright-red;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.418);
+    &:hover {
+      color: lighten($bright-red, 2);
+      background-color: darken($v-pale-red, 5);
     }
+  }
+  &::before {
+    position: absolute;
+    content: url("/images/bg-simplify-section-mobile.svg");
+    left: 0;
+    opacity: 0.15;
+  }
 }
-footer{
-    background-color: $v-dark-blue;
-    .socials{
-        img{
-            height: 20px;
-            width: 20px;
-        }
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $v-dark-blue;
+  padding: 0 2em;
+  a {
+    color: $v-pale-red;
+    font-weight: 300;
+    transition: .3s ease;
+    &:hover{
+      color: $bright-red;
     }
+  }
+  .logo-socials__wrapper {
+    order: 3;
+    flex-direction: column-reverse;
+    margin: 3em 0;
+    .logo{
+      filter: brightness(0) invert(1);
+    }
+  }
+  .socials {
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 2em;
+    img {
+      height: 30px;
+      width: 30px;
+      transition: .3s ease-out;
+      &:hover{
+        filter: invert(29%) sepia(80%) saturate(4608%) hue-rotate(337deg) brightness(96%) contrast(97%);
+
+      }
+    }
+    a{
+      &:hover{
+        color: $bright-red;
+      }
+    }
+   
+  }
+  .footer_links {
+    order: 2;
+    justify-content: space-around;
+    align-items: flex-start;
+    .home,
+    .careers {
+      display: flex;
+      flex-direction: column;
+      a{
+        margin-bottom: 1em;
+        transition: .3s ease;
+       
+      }
+    }
+   
+  }
+  .updates {
+    order: -1;
+    width: 100%;
+    margin: 3em auto;
+    input {
+      width: 70%;
+      outline: none;
+      border-color: transparent;
+      border-radius: 30px;
+      padding: 1em;
+      margin-right: 0.5em;
+    }
+    button {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+  .copyright {
+    order: 5;
+    margin-bottom: 1em;
+    font-size: .7rem;
+  }
 }
