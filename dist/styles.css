@@ -1,7 +1,7 @@
-/* Google Font: Be Vietnam Pro || */
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
 /* Primary Colors || */
 /* Neutral Colors || */
+/* Google Font: Be Vietnam Pro || */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
 /* Fonts || */
 /* General Styles || */
 * {
@@ -14,25 +14,6 @@
 
 html {
   overflow-x: hidden;
-}
-
-body {
-  position: relative;
-  background-color: hsl(0deg, 0%, 100%);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 16px;
-  overflow-x: hidden;
-}
-body::before {
-  content: url("../images/bg-tablet-pattern.svg");
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: -10em;
-  right: 10em;
-  transform: scale(0.6);
-  opacity: 0.7;
-  z-index: -5;
 }
 
 img {
@@ -80,6 +61,25 @@ h5 {
 
 .center {
   text-align: center;
+}
+
+body {
+  position: relative;
+  background-color: hsl(0deg, 0%, 100%);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body::before {
+  content: url("../images/bg-tablet-pattern.svg");
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -10em;
+  right: 10em;
+  transform: scale(0.6);
+  opacity: 0.7;
+  z-index: -5;
 }
 
 /* NAV |||||| */
@@ -500,7 +500,7 @@ footer .copyright {
   /* HERO */
   .hero {
     flex-direction: row;
-    max-width: 70em;
+    max-width: 90%;
     text-align: left;
   }
   .hero_bring {
@@ -511,7 +511,7 @@ footer .copyright {
   .different {
     display: flex;
     flex-direction: row;
-    max-width: 100%;
+    max-width: 80%;
   }
   .different::before {
     left: -29em;
@@ -519,16 +519,16 @@ footer .copyright {
     transform: scale(0.8);
   }
   .different_details {
-    max-width: 400px;
+    max-width: 50%;
     text-align: left;
-    padding: 0;
+    padding-right: 9em;
     margin: 4em auto 0;
   }
   .different_details p {
     margin: 0;
   }
   .different_points {
-    max-width: 400px;
+    max-width: 50%;
     margin: auto;
   }
   .different .points {

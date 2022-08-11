@@ -1,0 +1,25 @@
+/* General Styles || */
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  img {
+    width: 100%;
+  }
+  p {
+    color: $dark-grayish-blue;
+    line-height: 1.8em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $dark-blue;
+  }
